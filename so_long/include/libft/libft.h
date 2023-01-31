@@ -69,6 +69,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_itoa(int n);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
+char	*ft_fstrjoin(char *s1free, char *s2);
 char	*get_next_line(int fd);
 
 t_list	*ft_lstnew(void *content);

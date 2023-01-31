@@ -6,13 +6,13 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:21:33 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/01/24 13:40:00 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/01/31 11:18:34 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	sizemap(t_map *map)
+int	sizemap(t_map *map)
 {
 	int		size;
 	char	*temp;
@@ -20,9 +20,10 @@ void	sizemap(t_map *map)
 
 	size = 0;
 	i = 0;
+	temp = NULL;
 	while (i > 0)
 	{
-		temp = get_next_line(map->fd);
+		map->mapback;
 		size++;
 		if (temp != NULL)
 			free (temp);
@@ -31,67 +32,80 @@ void	sizemap(t_map *map)
 	return (size);
 }
 
-void	valid_map(char *str)
+int	valid_map(char *str, t_count *count)
 {
 	int	i;
-	int	player_c;
-	int	coll_c;
-	int	exit_c;
 
 	i = 0;
+	count->coll_c = 0;
+	count->exit_c = 0;
+	count->player_c = 0;
 	while (str[i])
 	{
 		if (str[i] == 'P')
-			player_c++;
+			count->player_c++;
 		else if (str[i] == 'C')
-			coll_c++;
+			count->coll_c++;
 		else if (str[i] == 'E')
-			exit_c++;
+			count->exit_c++;
+		else if (count->player_c != 1 || \
+		count->coll_c < 1 || count->exit_c != 1)
+			return (-1);
 		i++;
 	}
-	if (player_c != 1 || coll_c < 1 || exit_c != 1)
+	if (count->player_c != 1 || count->coll_c < 1 || count->exit_c != 1)
 		return (0);
-	else
-		return (1);
-	return (coll_c);
+	return (count->coll_c);
 }
 
-char	map(t_map *map)
+char	**map(t_map *map)
 {
 	char	*temp;
 	char	*new;
 
-	while (temp)
-	{
-		temp = get_next_line(map->fd);
-		new = ft_fstrjoin(new, temp);
-		if (temp != NULL)
-			free (temp);
+	temp = "yessir miller";
+	new = NULL;
+	if (map->fd > 0)
+	{	
+		while (temp)
+		{
+			temp = get_next_line(map->fd);
+			new = ft_fstrjoin(new, temp);
+			if (temp != NULL)
+				free (temp);
+		}
+		map->mapback = ft_split(new, '\n');
+		return (map->mapback);
 	}
-	map->mapback = ft_split(new, '\n');
-	return (map->mapback);
+	else
+		return (NULL);
 }
 
-/*\
-int		x;
+void	spawn_map(t_map *map, t_img *img, mlx_t *mlx)
+{
+	int		x;
 	int		y;
-	char	*gnl;
+	int		i;
 
-	gnl = get_next_line(fd);
-	while (x < _x)
+	x = 0;
+	y = 0;
+	i = 0;
+	while (x <= map->height)
 	{
-		while (y < _y)
+		x++;
+		while (y <= map->width)
 		{
-			if (*gnl == 'E')
-				spawnpdoor(mlx, x, y);
-			if (*gnl == 'P')
-				spawnplayer(mlx, x, y);
-			if (gnl == 'C')
-				spawncollectible(mlx, x, y);
-			if (gnl == '1')
-				spawnwall(mlx, x, y);
-			if (gnl == '0')
-				spawnbackground(mlx, x, y);
+			if ( == 'E')
+				spawnpdoor(mlx, x, y, img);
+			if ( == 'P')
+				spawnplayer(mlx, x, y, img);
+			if ( == 'C')
+				spawncollectible(mlx, x, y, img);
+			if ( == '1')
+				spawnwall(mlx, x, y, img);
+			if ( == '0')
+				spawnbackground(mlx, x, y, img);
+			y++;
 		}
 	}
-*/
+}

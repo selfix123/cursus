@@ -6,13 +6,13 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 09:49:28 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/01/23 09:49:55 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/01/31 10:42:37 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char *s1free, char *s2)
+char	*ft_fstrjoin(char *s1free, char *s2)
 {
 	size_t	str1;
 	size_t	str2;
