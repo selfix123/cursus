@@ -6,12 +6,13 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:35:53 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/01/31 10:37:47 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/02/02 15:21:15 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
+# define MAP "map.ber"
 # define WIDTH 2550
 # define HEIGHT 1440
 # define PIC_SIZE 75
@@ -55,8 +56,8 @@ void	spawnwall(mlx_t *mlx, int x, int y, t_img *img);
 void	spawnpdoor(mlx_t *mlx, int x, int y, t_img *img);
 void	spawncollectible(mlx_t *mlx, int x, int y, t_img *img);
 void	spawnbackground(mlx_t *mlx, int x, int y, t_img *img);
-int		sizemap(t_map *map);
-int		valid_map(char *str, t_count *count);
+void	sizemap(t_map *map, char *mape);
+int		valid_map(char *str);
 char	**map(t_map *map);
 void	spawn_map(t_map *map, t_img *img, mlx_t *mlx);
 

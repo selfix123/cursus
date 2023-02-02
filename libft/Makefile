@@ -59,7 +59,10 @@ SRCS	=	ft_atoi.c\
 			ft_strtrim.c\
 			ft_substr.c\
 			ft_tolower.c\
-			ft_toupper.c
+			ft_toupper.c\
+			ft_get_next_line.c\
+			ft_fstrjoin.c\
+			ft_xfree.c
 
 #	BSources	are	all	.c	files
 BSRCS	=		ft_lstnew.c\

@@ -15,12 +15,25 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include  <limits.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+# endif
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }		t_list;
+
+typedef struct s_var
+{
+	char	*tmp;
+	char	*old;
+	int		rv;
+	size_t	cut;
+}	t_var;
 
 void	ft_putstr_fd(char *s, int fd);
 int		ft_atoi(const char *str);
@@ -56,6 +69,9 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_itoa(int n);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
+char	*ft_fstrjoin(char *s1free, char *s2);
+char	*get_next_line(int fd);
+void	*ft_xfree(void *ptr);
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
