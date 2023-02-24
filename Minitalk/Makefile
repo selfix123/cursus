@@ -1,3 +1,4 @@
+#Makefile fait par sm222 et brian et moi le plus beau
 LIBFT	= 	libft.a
 LDIR	=	libft/
 NCLIENT	=	client
@@ -23,7 +24,7 @@ $(NCLIENT): $(CLIENTOBJS)
 	$(CC) $(CFLAGS) $(CLIENTOBJS) $(LDIR)$(LIBFT) -o client
 
 libft:
-	$(MAKE) -C $(LDIR)
+	@$(MAKE) -C $(LDIR)
 
 clean:
 	$(RM) $(SERVEROBJS)

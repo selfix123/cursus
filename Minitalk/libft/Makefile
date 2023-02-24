@@ -1,16 +1,4 @@
 #------------------------------------------------------------------------------#
-#	GENERICS	#
-#------------------------------------------------------------------------------#
-
-#	Special	variables
-DEFAULT_GOAL:	all
-.DELETE_ON_ERROR:	$(NAME)
-.PHONY:	all	bonus	clean	fclean	re
-#	'HIDE	=	@'	will	hide	all	terminal	output	from	Make
-HIDE	=
-
-
-#------------------------------------------------------------------------------#
 #	VARIABLES	#
 #------------------------------------------------------------------------------#
 
@@ -79,26 +67,29 @@ BSRCS	=		ft_lstnew.c\
 #	TARGETS	#
 #------------------------------------------------------------------------------#
 
-all:	$(NAME)
+all: $(NAME)
 
-#	Generates	output	file
+# Generates output file
 $(NAME): $(OBJS)
-	@(	ar	-rcs	$@	$^)
+	@ar -rcs $(NAME) $(OBJS)
 
-#	Compiles	sources	into	objects
-.c.o:	$(SRCS)	$(INC)
-	$(HIDE)$(CC)	$(CFLAGS)	-c	$<	-o	$@
+# Compiles sources into objects
+$(OBJS): $(SRCS)
+	@$(CC) $(CFLAGS) -c $(SRCS)
 
-bonus:	$(BOBJS)	$(OBJS)
-	ar	-rs	$(NAME)	$(BOBJS)
+bonus: $(BOBJS)
+	@ar -rcs $(NAME) $(BOBJS)
 
-#	Removes	objects
+$(BOBJS): $(BSRCS)
+	@$(CC) $(CFLAGS) -c $(BSRCS)
+
+# Removes objects
 clean:
-	@$(HIDE)$(RM)	$(OBJS)	$(BOBJS)
+	@$(RM) $(OBJS) $(BOBJS)
 
-#	Removes	objects	and	executables
-fclean:	clean
-	@$(HIDE)$(RM)	$(NAME)
+# Removes objects and executables
+fclean: clean
+	@$(RM) $(NAME)
 
-#	Removes	objects	and	executables	and	remakes
-re:	fclean	all
+# Removes objects and executables and remakes
+re: fclean all
