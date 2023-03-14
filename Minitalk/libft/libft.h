@@ -72,6 +72,7 @@ char	**ft_split(char const *s, char c);
 char	*ft_fstrjoin(char *s1free, char *s2);
 char	*get_next_line(int fd);
 void	*ft_xfree(void *ptr);
+int		ft_recursive_power(int nb, int power);
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
