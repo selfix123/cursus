@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 09:09:50 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/03/14 14:10:25 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/03/15 10:48:54 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_msgreceived(int sig)
 {
-	if (sig == SIGUSR2)
+	if (sig == SIGUSR1)
 		ft_putstr_fd("Message received", 1);
 	else
 		ft_putstr_fd("Message not received", 1);
@@ -59,17 +59,20 @@ int	main(int argc, char **argv)
 	int				len;
 	char			*str_to_send;
 
-	if (argc == 3)
+	if (argc != 3)
 	{
-		pid = ft_atoi(argv[1]);
-		if (pid <= 0)
-			return (-1);
-		str_to_send = argv[2];
-		len = ft_strlen(str_to_send);
-		i = -1;
-		ft_send_len(len, pid);
-		while (str_to_send[++i])
-			ft_send_bits(str_to_send[i], pid);
-		ft_send_bits(str_to_send[i], pid);
+		ft_putendl_fd("\033[0;35mWrong input.Try ./client pid message", 1);
+		return (-1);
 	}
+	pid = ft_atoi(argv[1]);
+	if (pid <= 0)
+		return (-1);
+	str_to_send = argv[2];
+	len = ft_strlen(str_to_send);
+	i = -1;
+	ft_send_len(len, pid);
+	while (str_to_send[++i])
+		ft_send_bits(str_to_send[i], pid);
+	ft_send_bits(str_to_send[i], pid);
+	//ft_msgreceived(SIGUSR1);
 }

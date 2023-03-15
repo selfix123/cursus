@@ -6,24 +6,11 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 09:10:01 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/03/14 14:07:26 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/03/15 11:12:20 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
-
-void	*ft_calloc_exit(size_t count, size_t size)
-{
-	size_t	total_size;
-	void	*ret;
-
-	total_size = size * count;
-	ret = malloc(total_size);
-	if (!ret)
-		exit(EXIT_FAILURE);
-	ft_bzero(ret, total_size);
-	return (ret);
-}
 
 static void	ft_msg_len(int *curr_bit, char **str, int *received, int signal)
 {
@@ -47,7 +34,9 @@ static void	ft_clear_all(int *len, char **str, int *i)
 	*len = 0;
 	if (str)
 	{
-		ft_putendl_fd(*str, 1);
+		printf("\033[0;36m");
+		printf("%s\n", *str);
+		//ft_putendl_fd(*str, 1);
 		free(*str);
 		*str = 0;
 	}
@@ -83,17 +72,22 @@ void	ft_handler(int signal, siginfo_t *info, void *context)
 	}
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	struct sigaction	action;
 
+	(void) argv;
+	if (argc != 1)
+	{
+		ft_putstr_fd ("\033[0;31mWrong input.Try ./server", 1);
+		ft_putchar_fd('\n', 1);
+		return (-1);
+	}
 	action.sa_flags = SA_SIGINFO;
 	action.sa_sigaction = ft_handler;
 	sigaction(SIGUSR1, &action, NULL);
 	sigaction(SIGUSR2, &action, NULL);
 	printf("%d\n", getpid());
-	//signal (SIGUSR1, ft_handler);
-	//signal (SIGUSR2, ft_handler);
 	while (1)
 		usleep(100);
 	return (0);
