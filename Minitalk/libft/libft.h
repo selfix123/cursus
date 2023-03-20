@@ -78,6 +78,7 @@ char	*ft_itoa(int n);
 /*functions from other projects*/
 char	*get_next_line(int fd);
 void	*ft_xfree(void *ptr);
+void	*ft_return_struct(void *ptr);
 
 /*playing with linked lists*/
 t_list	*ft_lstnew(void *content);

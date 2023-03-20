@@ -52,7 +52,8 @@ SRCS	=	ft_atoi.c\
 			ft_fstrjoin.c\
 			ft_xfree.c\
 			ft_recursive_power.c\
-			ft_calloc_exit.c
+			ft_calloc_exit.c\
+			ft_return_struct.c
 
 #	BSources	are	all	.c	files
 BSRCS	=		ft_lstnew.c\

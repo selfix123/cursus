@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 09:09:50 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/03/15 10:48:54 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/03/20 15:34:08 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		ft_putendl_fd("\033[0;35mWrong input.Try ./client pid message", 1);
+		ft_putendl_fd("\033[0;35mWrong input../client takes pid and message", 1);
 		return (-1);
 	}
 	pid = ft_atoi(argv[1]);
@@ -74,5 +74,7 @@ int	main(int argc, char **argv)
 	while (str_to_send[++i])
 		ft_send_bits(str_to_send[i], pid);
 	ft_send_bits(str_to_send[i], pid);
-	//ft_msgreceived(SIGUSR1);
+	//signal(SIGUSR1, ft_msgreceived);
+	//signal(SIGUSR2, ft_msgreceived);
+	return (0);
 }

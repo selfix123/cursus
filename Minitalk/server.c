@@ -6,11 +6,13 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 09:10:01 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/03/15 11:12:20 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/03/20 16:02:13 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
+
+struct s_data	g_data;
 
 static void	ft_msg_len(int *curr_bit, char **str, int *received, int signal)
 {
@@ -29,46 +31,49 @@ static void	ft_msg_len(int *curr_bit, char **str, int *received, int signal)
 	(*curr_bit)++;
 }
 
-static void	ft_clear_all(int *len, char **str, int *i)
+static void	ft_clear_all(void)
 {
-	*len = 0;
-	if (str)
+	g_data.len = 0;
+	if (g_data.message)
 	{
-		printf("\033[0;36m");
-		printf("%s\n", *str);
-		//ft_putendl_fd(*str, 1);
-		free(*str);
-		*str = 0;
+		ft_putendl_fd(g_data.message, 1);
+		g_data.message = ft_xfree(g_data.message);
 	}
-	*i = 0;
+	g_data.i = 0;
+}
+
+void	ft_free_struct(t_data g_data)
+{
+	g_data.client_pid = 0;
+	g_data.bit = 0;
+	g_data.i = 0;
+	g_data.len = 0;
+	g_data.c = 0;
 }
 
 void	ft_handler(int signal, siginfo_t *info, void *context)
 {
-	static int	bit = 0;
-	static int	i = 0;
-	static int	len = 0;
-	static char	c = 0;
-	static char	*message = 0;
-
 	(void) context;
-	(void) info;
-	if (!len)
-		ft_msg_len(&bit, &message, &len, signal);
+	if (!g_data.client_pid)
+		g_data.client_pid = info->si_pid;
+	if (g_data.client_pid != info->si_pid)
+		ft_free_struct(g_data);
+	if (!g_data.len)
+		ft_msg_len(&g_data.bit, &g_data.message, &g_data.len, signal);
 	else
 	{
 		if (signal == SIGUSR2)
-			c += ft_recursive_power(2, bit);
-		if (bit == 7)
+			g_data.c += ft_recursive_power(2, g_data.bit);
+		if (g_data.bit == 7)
 		{
-			message[i++] = c;
-			bit = 0;
-			if (c == 0)
-				return (ft_clear_all(&len, &message, &i));
-			c = 0;
+			g_data.message[g_data.i++] = g_data.c;
+			g_data.bit = 0;
+			if (g_data.c == 0)
+				return (ft_clear_all());
+			g_data.c = 0;
 			return ;
 		}
-		bit++;
+		g_data.bit++;
 	}
 }
 
@@ -79,7 +84,7 @@ int	main(int argc, char **argv)
 	(void) argv;
 	if (argc != 1)
 	{
-		ft_putstr_fd ("\033[0;31mWrong input.Try ./server", 1);
+		ft_putstr_fd ("\033[0;31mWrong input.Try ./server only!", 1);
 		ft_putchar_fd('\n', 1);
 		return (-1);
 	}
@@ -87,8 +92,9 @@ int	main(int argc, char **argv)
 	action.sa_sigaction = ft_handler;
 	sigaction(SIGUSR1, &action, NULL);
 	sigaction(SIGUSR2, &action, NULL);
-	printf("%d\n", getpid());
+	ft_putnbr_fd(getpid(), 1);
+	ft_putchar_fd('\n', 1);
 	while (1)
-		usleep(100);
+		pause();
 	return (0);
 }

@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_return_struct.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 09:15:21 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/03/20 14:37:17 by zbeaumon         ###   ########.fr       */
+/*   Created: 2023/03/20 11:23:51 by zbeaumon          #+#    #+#             */
+/*   Updated: 2023/03/20 11:34:57 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
-# include<stdio.h>
-# include<signal.h>
-# include "libft/libft.h"
+#include "libft.h"
 
-typedef struct s_data
+void	*ft_return_struct(void *ptr)
 {
-	int		bit;
-	int		i;
-	int		len;
-	char	c;
-	char	*message;
-	int		client_pid;
-}	t_data;
+	static void	*data = NULL;
 
-
-#endif
+	if (ptr)
+		data = ptr;
+	return (data);
+}
