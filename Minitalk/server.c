@@ -6,13 +6,32 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 09:10:01 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/03/20 16:02:13 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/03/21 12:59:55 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
 struct s_data	g_data;
+
+void	ft_free_struct(void)
+{
+	g_data.message = ft_xfree(g_data.message);
+	g_data.client_pid = 0;
+	g_data.bit = 0;
+	g_data.c = 0;
+}
+
+static void	ft_clear_all(void)
+{
+	g_data.len = 0;
+	if (g_data.message)
+	{
+		ft_putendl_fd(g_data.message, 1);
+		g_data.message = ft_xfree(g_data.message);
+	}
+	g_data.i = 0;
+}
 
 static void	ft_msg_len(int *curr_bit, char **str, int *received, int signal)
 {
@@ -31,36 +50,19 @@ static void	ft_msg_len(int *curr_bit, char **str, int *received, int signal)
 	(*curr_bit)++;
 }
 
-static void	ft_clear_all(void)
-{
-	g_data.len = 0;
-	if (g_data.message)
-	{
-		ft_putendl_fd(g_data.message, 1);
-		g_data.message = ft_xfree(g_data.message);
-	}
-	g_data.i = 0;
-}
-
-void	ft_free_struct(t_data g_data)
-{
-	g_data.client_pid = 0;
-	g_data.bit = 0;
-	g_data.i = 0;
-	g_data.len = 0;
-	g_data.c = 0;
-}
-
 void	ft_handler(int signal, siginfo_t *info, void *context)
 {
 	(void) context;
 	if (!g_data.client_pid)
 		g_data.client_pid = info->si_pid;
 	if (g_data.client_pid != info->si_pid)
-		ft_free_struct(g_data);
+	{
+		ft_free_struct();
+		ft_clear_all();
+	}
 	if (!g_data.len)
 		ft_msg_len(&g_data.bit, &g_data.message, &g_data.len, signal);
-	else
+	else if (g_data.message)
 	{
 		if (signal == SIGUSR2)
 			g_data.c += ft_recursive_power(2, g_data.bit);
@@ -95,6 +97,6 @@ int	main(int argc, char **argv)
 	ft_putnbr_fd(getpid(), 1);
 	ft_putchar_fd('\n', 1);
 	while (1)
-		pause();
+		usleep(100);
 	return (0);
 }

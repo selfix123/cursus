@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 09:09:50 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/03/20 15:34:08 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/03/21 10:27:26 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,5 @@ int	main(int argc, char **argv)
 	while (str_to_send[++i])
 		ft_send_bits(str_to_send[i], pid);
 	ft_send_bits(str_to_send[i], pid);
-	//signal(SIGUSR1, ft_msgreceived);
-	//signal(SIGUSR2, ft_msgreceived);
 	return (0);
 }
