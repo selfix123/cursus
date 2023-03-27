@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 09:10:01 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/03/21 12:59:55 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/03/27 15:40:44 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static void	ft_msg_len(int *curr_bit, char **str, int *received, int signal)
 	if (*curr_bit == 31)
 	{
 		*received = 1;
-		*str = ft_calloc_exit(len_val + 1, sizeof(char));
+		*str = ft_calloc_exit(len_val + len_val, sizeof(char));
 		*curr_bit = 0;
 		len_val = 0;
 		return ;
@@ -66,17 +66,18 @@ void	ft_handler(int signal, siginfo_t *info, void *context)
 	{
 		if (signal == SIGUSR2)
 			g_data.c += ft_recursive_power(2, g_data.bit);
-		if (g_data.bit == 7)
+		if (g_data.bit == 8)
 		{
+			kill(info->si_pid, SIGUSR1);
 			g_data.message[g_data.i++] = g_data.c;
 			g_data.bit = 0;
 			if (g_data.c == 0)
-				return (ft_clear_all());
+				ft_clear_all();
 			g_data.c = 0;
-			return ;
 		}
 		g_data.bit++;
 	}
+	kill(info->si_pid, SIGUSR2);
 }
 
 int	main(int argc, char **argv)
@@ -97,6 +98,6 @@ int	main(int argc, char **argv)
 	ft_putnbr_fd(getpid(), 1);
 	ft_putchar_fd('\n', 1);
 	while (1)
-		usleep(100);
+		pause();
 	return (0);
 }

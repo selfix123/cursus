@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 09:15:21 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/03/20 14:37:17 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/03/27 15:25:37 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,13 @@ typedef struct s_data
 	int		client_pid;
 }	t_data;
 
+typedef struct s_cdata
+{
+	char	*message;
+	int		i;
+	int		current_bit;
+	int		spid;
+	int		length;
+}			t_cdata;
 
 #endif
