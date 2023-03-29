@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 09:10:01 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/03/28 10:43:34 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/03/29 12:53:15 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,31 +21,6 @@ static void	ft_cleanserver(int *binairy, int *received)
 	*binairy = 0;
 	*received = 0;
 }
-
-/*static void	ft_clear_all(void)
-{
-	g_data.len = 0;
-	if (g_data.message)
-	{
-		ft_putendl_fd(g_data.message, 1);
-		g_data.message = ft_xfree(g_data.message);
-	}
-	g_data.i = 0;
-}
-char	*ft_stringstore(char *str, char c)
-{
-	char	*new;
-	int		len;
-
-	len = ft_strlen(str);
-	new = malloc(len + 2 * sizeof(char));
-	ft_memmove(new, str, len);
-	new[len] = c;
-	new[len] = '\0';
-	ft_xfree(str);
-	return (new);
-}
-*/
 
 static char	*ft_constructstr(char *src, int bit)
 {
@@ -77,78 +52,28 @@ void	ft_handler(int signal, siginfo_t *info, void *context)
 	static int	received;
 
 	(void) context;
+	if (g_data.client_pid != info->si_pid && info->si_pid != 0)
+		ft_cleanserver(&binairy, &received);
 	if (!g_data.client_pid)
 		g_data.client_pid = info->si_pid;
-	if (info->si_pid != g_data.client_pid)
-		ft_cleanserver(&binairy, &received);
 	if (signal == SIGUSR1)
 		received |= (1 << binairy);
-	binairy++;
-	if (binairy == 8)
-	{	
+	if (++binairy == 8)
+	{
 		if (!received)
 		{
-			kill(info->si_pid, SIGUSR1);
 			ft_putendl_fd(g_data.message, 1);
-			g_data.message = ft_xfree(g_data.message);
+			kill(g_data.client_pid, SIGUSR1);
+			ft_cleanserver(&binairy, &received);
+			return ;
 		}
 		else
 			g_data.message = ft_constructstr(g_data.message, received);
 		binairy = 0;
 		received = 0;
 	}
-	kill(info->si_pid, SIGUSR2);
+	kill(g_data.client_pid, SIGUSR2);
 }
-
-/*
-static void	ft_msg_len(int *curr_bit, char **str, int *received, int signal)
-{
-	static int	len_val = 0;
-
-	if (signal == SIGUSR2)
-		len_val += ft_recursive_power(2, *curr_bit);
-	if (*curr_bit == 31)
-	{
-		*received = 1;
-		*str = ft_calloc_exit(len_val + len_val, sizeof(char));
-		*curr_bit = 0;
-		len_val = 0;
-		return ;
-	}
-	(*curr_bit)++;
-}
-*/
-/*
-void	ft_handler(int signal, siginfo_t *info, void *context)
-{
-	(void) context;
-	if (!g_data.client_pid)
-		g_data.client_pid = info->si_pid;
-	if (g_data.client_pid != info->si_pid)
-	{
-		ft_free_struct();
-		ft_clear_all();
-	}
-	if (!g_data.len)
-		ft_msg_len(&g_data.bit, &g_data.message, &g_data.len, signal);
-	if (g_data.message)
-	{
-		if (signal == SIGUSR2)
-			g_data.c += ft_recursive_power(2, g_data.bit);
-		if (g_data.bit == 8)
-		{
-			kill(info->si_pid, SIGUSR1);
-			g_data.message[g_data.i++] = g_data.c;
-			g_data.bit = 0;
-			if (g_data.c == 0)
-				ft_clear_all();
-			g_data.c = 0;
-		}
-		g_data.bit++;
-	}
-	kill(info->si_pid, SIGUSR2);
-}
-*/
 
 int	main(int argc, char **argv)
 {
