@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:21:33 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/02/02 15:25:14 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/04/07 10:31:14 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ void	sizemap(t_map *map, char *mape)
 			map->heightnb++;
 		i++;
 	}
-	while (map->mapback[i])
+	map->heightnb++;
+	i = 0;
+	while (mape[i])
 	{
 		if (mape[i] == '\n')
 			return ;
@@ -32,81 +34,69 @@ void	sizemap(t_map *map, char *mape)
 	}
 }
 
-int	valid_map(char *str)
+int	valid_map(char *str, t_game *game)
 {
 	int			i;
-	t_count		count;
 
 	i = 0;
-	count.coll_c = 0;
-	count.exit_c = 0;
-	count.player_c = 0;
 	while (str[i])
 	{
-		if (str[i] == 'P')
-			count.player_c++;
-		else if (str[i] == 'C')
-			count.coll_c++;
-		else if (str[i] == 'E')
-			count.coll_c++;
-		else if (count.player_c != 1 || \
-		count.coll_c < 1 || count.exit_c != 1)
-			return (-1);
+		if (!(str[i] == 'P' || str[i] == 'E' || str[i] == 'C'
+				|| str[i] == '1' || str[i] == '0' || str[i] == '\n'))
+			return (0);
+		if (str[i] == 'C')
+			game->coll_c++;
 		i++;
 	}
-	if (count.player_c != 1 || count.coll_c < 1 || count.exit_c != 1)
-		return (0);
-	return (count.coll_c);
+	return (1);
 }
 
-char	**map(t_map *map)
+void	map(t_game *game)
 {
 	char	*temp;
 	char	*new;
 
 	temp = "yessir miller";
 	new = NULL;
-	if (map->fd > 0)
+	if (game->map_data.fd > 0)
 	{	
 		while (temp)
 		{
-			temp = get_next_line(map->fd);
+			temp = get_next_line(game->map_data.fd);
+			Ct_mprintf(temp, ft_strlen(temp), 1, 'a');
 			new = ft_fstrjoin(new, temp);
-			if (temp != NULL)
-				free (temp);
+			ft_xfree(temp);
 		}
-		if (valid_map(*map->mapback) > 0)
-		{
-			map->mapback = ft_split(new, '\n');
-			return (map->mapback);
-		}
+		close(game->map_data.fd);
+		if (valid_map(new, game) > 0)
+			game->map_data.mapback = ft_split(new, '\n');
+		sizemap(&game->map_data, new);
 	}
-	return (NULL);
 }
 
-void	spawn_map(t_map *map, t_img *img, mlx_t *mlx)
+void	spawn_map(t_game *game)
 {
 	int		x;
 	int		y;
 
-	x = 0;
 	y = 0;
-	while (x <= map->heightnb)
+	while (y < game->map_data.heightnb)
 	{
-		while (y <= map->widthnb)
+		x = 0;
+		while (x < game->map_data.widthnb)
 		{
-			if (map->mapback[x][y] == 'E')
-				spawnpdoor(mlx, x, y, img);
-			if (map->mapback[x][y] == 'P')
-				spawnplayer(mlx, x, y, img);
-			if (map->mapback[x][y] == 'C')
-				spawncollectible(mlx, x, y, img);
-			if (map->mapback[x][y] == '1')
-				spawnwall(mlx, x, y, img);
-			if (map->mapback[x][y] == '0')
-				spawnbackground(mlx, x, y, img);
-			y++;
+			if (game->map_data.mapback[y][x] == 'E')
+				spawnpdoor(game->mlx, x, y, &game->img);
+			else if (game->map_data.mapback[y][x] == 'P')
+				spawnplayer(game->mlx, x, y, &game->img);
+			else if (game->map_data.mapback[y][x] == 'C')
+				spawncollectible(game->mlx, x, y, &game->img);
+			else if (game->map_data.mapback[y][x] == '1')
+				spawnwall(game->mlx, x, y, &game->img);
+			else if (game->map_data.mapback[y][x] == '0')
+				spawnbackground(game->mlx, x, y, &game->img);
+			x++;
 		}
-		x++;
+		y++;
 	}
 }

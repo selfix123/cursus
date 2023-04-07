@@ -1,28 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_next_line.c                                 :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 14:00:47 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/01/16 14:01:06 by zbeaumon         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 15:30:26 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/01/11 15:23:03 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/04/07 11:15:10 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
 char	*ft_tiny_split(char *s, size_t *cut)
 {
@@ -73,13 +61,13 @@ char	*get_next_line(int fd)
 		t_data.rv = read(fd, t_data.tmp, BUFFER_SIZE);
 		if (t_data.rv <= 0)
 			break ;
-		stash = ft_strjoin(stash, t_data.tmp);
+		stash = ft_fstrjoin(stash, t_data.tmp);
 	}
 	t_data.tmp = ft_xfree(t_data.tmp);
 	if (t_data.rv == -1 || (t_data.rv <= 0 && *stash == 0))
 		return (stash = ft_xfree(stash), NULL);
 	t_data.tmp = ft_tiny_split(stash, &t_data.cut);
 	t_data.old = stash;
-	stash = ft_strjoin(NULL, stash + t_data.cut);
+	stash = ft_fstrjoin(NULL, stash + t_data.cut);
 	return (ft_xfree(t_data.old), t_data.tmp);
 }

@@ -16,9 +16,10 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include  <limits.h>
+# include "get_next_line.h"
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
+#  define BUFFER_SIZE 1000
 # endif
 
 typedef struct s_list
@@ -26,14 +27,6 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }		t_list;
-
-typedef struct s_var
-{
-	char	*tmp;
-	char	*old;
-	int		rv;
-	size_t	cut;
-}	t_var;
 
 void	ft_putstr_fd(char *s, int fd);
 int		ft_atoi(const char *str);
