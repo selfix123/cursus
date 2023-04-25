@@ -5,6 +5,10 @@ FILE    =   main.c\
             map.c\
             spawn.c\
 			img.c\
+			movement.c\
+			kill_map.c\
+			flood_fill.c\
+			error.c\
 
 LIBDIR = include/libft/
 MLXDIR = include/MLX42/
@@ -15,7 +19,7 @@ all: libft $(NAME)
 
 $(NAME): $(OFILE)
 		@echo "Compiling..."
-		 @$(CC) $(FILE) $(LIBDIR)$(LIBFT) $(MLXDIR)$(MLX) "C_tools/C_tool.a" -I include -lglfw -L "/USERS/$(USER)/.brew/opt/glfw/lib/" -o $(NAME)
+		 @$(CC) $(FILE) $(LIBDIR)$(LIBFT) $(MLXDIR)$(MLX) -I include -lglfw -L "/USERS/$(USER)/.brew/opt/glfw/lib/" -o $(NAME)
 
 libft: mlx
 	@$(MAKE) -C $(LIBDIR)
