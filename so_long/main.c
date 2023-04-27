@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 11:05:53 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/04/25 13:02:06 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:12:17 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,20 @@ void	ft_movement_handler(mlx_key_data_t keydata, void *param)
 	}
 }
 
+int	check_if_ber(char *av)
+{
+	av = ft_strrchr(av, '.');
+	if (!av)
+		return (0);
+	else
+		return (ft_strncmp(av, ".ber", 5));
+}
+
 void	map_initialisation(t_game *game, char *arg)
 {
 	game->map_data.fd = open(arg, O_RDONLY);
 	if (game->map_data.fd < 0)
-		map_error(2, game, MAP_ERROR);
+		map_error(2, game, FILE_ERROR);
 	map(game);
 	game->map_data.height = game->map_data.heightnb * PIC_SIZE;
 	game->map_data.width = game->map_data.widthnb * PIC_SIZE;
@@ -47,8 +56,11 @@ void	map_initialisation(t_game *game, char *arg)
 			"Frog on ice", false);
 	ft_player_position(game);
 	init_img(game);
+	check_map_size(game, &game->map_data.heightnb, &game->map_data.widthnb);
 	if (is_map_valid(game) == 0)
+	{
 		map_error(1, game, MAP_ERROR);
+	}
 	spawn_map(game);
 }
 
@@ -81,7 +93,7 @@ int32_t	main(int argc, char **argv)
 	ft_bzero(&game, sizeof(t_game));
 	if (argc == 1)
 		map_initialisation(&game, MAP);
-	else if (argc == 2)
+	else if (argc == 2 && check_if_ber(argv[1]) == 0)
 		map_initialisation(&game, argv[1]);
 	else
 		map_error(2, &game, FILE_ERROR);

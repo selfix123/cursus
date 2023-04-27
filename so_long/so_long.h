@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:35:53 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/04/25 13:01:13 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/04/27 10:39:08 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # define MAP_ERROR "invalid map"
 # define WIN_GAME "Good job you won!"
 # define FILE_ERROR "invalid file"
+# define MAP_TOO_BIG "Map too big"
 # define STOP_GAME "Quitting game"
 # include <unistd.h>
 # include <stdlib.h>
@@ -67,6 +68,7 @@ typedef struct s_game
 	int		coll_fc;
 	int		player_move;
 	int		exit_c;
+	int		exit_fc;
 }	t_game;
 
 void		spawnplayer(mlx_t *mlx, int x, int y, t_img *img);
@@ -90,5 +92,8 @@ void		map_error(int nb, t_game *game, char *message);
 int			is_map_valid(t_game *game);
 int			invalid_map(t_game *game, int y, int x);
 void		end_game_win(t_game *game, char *message);
+void		render_map(t_game *game, int y, int x);
+int			is_map_rectangular(t_game *game);
+int			check_map_size(t_game *game, int *y_s, int *x_s);
 
 #endif
