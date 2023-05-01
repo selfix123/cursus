@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 11:05:53 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/01 12:22:28 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/05/01 15:40:15 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	map_initialisation(t_game *game, char *arg)
 	game->map_data.height = game->map_data.heightnb * PIC_SIZE;
 	game->map_data.width = game->map_data.widthnb * PIC_SIZE;
 	game->mlx = mlx_init(game->map_data.width, game->map_data.height,
-			"Frog on ice", false);
+			"Duck, the return of minitalk", false);
 	ft_player_position(game);
 	init_img(game);
 	check_map_size(game);
