@@ -1,0 +1,233 @@
+!XPM42
+75 75 156 2 c
+   #010001FF
+.  #0E0E0FFF
+X  #151415FF
+o  #171718FF
+O  #1B1B1BFF
++  #271C17FF
+@  #2B2019FF
+#  #2F2522FF
+$  #3B2D28FF
+%  #413124FF
+&  #533625FF
+*  #5B4333FF
+=  #5D483BFF
+-  #60432BFF
+;  #6B462CFF
+:  #724825FF
+>  #674730FF
+,  #6D4834FF
+<  #6B4F3EFF
+1  #754E36FF
+2  #774C3DFF
+3  #6E543CFF
+4  #75563EFF
+5  #7E563FFF
+6  #7A5B3EFF
+7  #604D41FF
+8  #655143FF
+9  #6E5441FF
+0  #765641FF
+q  #735940FF
+w  #7B5D43FF
+e  #755A48FF
+r  #7C5E4AFF
+t  #7D6246FF
+y  #7C624DFF
+u  #8B5C36FF
+i  #825F3FFF
+p  #955F36FF
+a  #9B6133FF
+s  #A56D3DFF
+d  #A86F3FFF
+f  #815B43FF
+g  #885D48FF
+h  #836246FF
+j  #8E6646FF
+k  #846449FF
+l  #84684DFF
+z  #8C6B4DFF
+x  #966F4FFF
+c  #98694EFF
+v  #97714EFF
+b  #9C744CFF
+n  #866453FF
+m  #8C6452FF
+M  #846951FF
+N  #8B6B53FF
+B  #936D55FF
+V  #9E6D50FF
+C  #936F5AFF
+Z  #8D7156FF
+A  #937153FF
+S  #9A7453FF
+D  #93755BFF
+F  #9C755BFF
+G  #AE7645FF
+H  #A0764DFF
+J  #B47D4FFF
+K  #A07650FF
+L  #A07850FF
+P  #A3775BFF
+I  #A2785AFF
+U  #A87B5EFF
+Y  #B37F52FF
+T  #A47C62FF
+R  #AC7E61FF
+E  #B7814FFF
+W  #AD835EFF
+Q  #B08257FF
+!  #BC8654FF
+~  #BE8856FF
+^  #B6895FFF
+/  #BD8D5EFF
+(  #9C8573FF
+)  #A68162FF
+_  #AC8463FF
+`  #A68168FF
+'  #B18362FF
+]  #B38963FF
+[  #BC8D63FF
+{  #B0856AFF
+}  #B7886AFF
+|  #BD8D6BFF
+ . #BD906AFF
+.. #A48D7AFF
+X. #B28A71FF
+o. #C5835FFF
+O. #C18C5DFF
++. #C6915EFF
+@. #C9915DFF
+#. #C38260FF
+$. #C88766FF
+%. #C48F61FF
+&. #CD8963FF
+*. #C38F6FFF
+=. #CB8C6AFF
+-. #C59161FF
+;. #CB9664FF
+:. #CE9A67FF
+>. #C4916EFF
+,. #CB936CFF
+<. #C7996FFF
+1. #CE9A69FF
+2. #D09A67FF
+3. #D5956DFF
+4. #D39F6EFF
+5. #C29171FF
+6. #CC9573FF
+7. #CF9874FF
+8. #CB9C7FFF
+9. #D59A74FF
+0. #DC9D75FF
+q. #D69F7AFF
+w. #D4A06FFF
+e. #D5A273FF
+r. #DBA777FF
+t. #DCA877FF
+y. #D5A37AFF
+u. #DCA57AFF
+i. #DAA87AFF
+p. #E0A176FF
+a. #E5A67BFF
+s. #E6A87DFF
+d. #8F8B89FF
+f. #9A8E85FF
+g. #918D8BFF
+h. #9A9087FF
+j. #9E948DFF
+k. #989694FF
+l. #9C9B9BFF
+z. #A3968DFF
+x. #A19791FF
+c. #A39891FF
+v. #A4A4A3FF
+b. #B2AEACFF
+n. #D7A982FF
+m. #E3A780FF
+M. #E6A982FF
+N. #E5AF8AFF
+B. #E3B18FFF
+V. #E5B696FF
+C. #E1B598FF
+Z. #E5BDA1FF
+A. #D1D1D1FF
+S. #E4E4E4FF
+D. #EAEAEAFF
+F. #00000000
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.X k.F.F.F.      F.F.F.F.  F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.v.) ..v.v.v.) W A g.v.v.c.{ j.F.F.F.F.F.F.F.F.F.F.v.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.A.      y.]       n.9.F ' S $ q e 8 X.q.' # g.N = v.F.F.X F.F.  F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.X 3 +.t   / H   3 R & $ 6.m.,.P a.s.C >.a.9.n *.a.0.9   S [   6 -.4     F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.y l b j 4 ;.^ 7 q.a.N.{ D R B 0.a.M.u.F R C 7.a.a.M.7.% ^ 1.6 k L h 6 6 j.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.  y.]   b @.t.<.P a.a.8.` T + 3.m.a.V.C.m.@ 1 0.a.m.Z.B.R [ i.+.b   b @.+.b   F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.  l D _ / +./ j =.a.a.F *.| 0 =.a.a.M.q.B >.| F a.a.N.a.5.B O.+.[ _ z t 6 j.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.    k r.2.+.G - 6.a._ 5.s.a.q.T } a.0.F 7.a.a.5.P a.a.a.a.* G +.:.i.h     v.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.A.  B %.-.-.+.E G p f &.=.U a.a.N.V.M.r 7.< ,.a.a.B.N.*.{ a.a.m.> G a G +.-.-.+.v   F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.b.w z b 1.1.1.! G a & =.i $.a.a.M.N.a.M.7 c 0.a.a.N.N.a.m 9.9.B u d s J :.;.:.b j 6 b.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.O 3 @.i   y.i.r./ G a : g m o.a.a.a.a.a.a.N #.0.a.a.a.a.a.' 2 1 p a a G / r.r.e.  t +.4 O F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.6 F ] ;.4.r.;.O.d J  .N &.3.a.a.a.a.0.g #.&.a.a.a.a.a.1.] Q a s d ~ +.:.e.r._ S 6 F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.  W r.@.2.r.2.O.G O.t.N &.&.0.0.a.0.P ; V &.3.u.a.a.r.i.u.-.a d G +.@.@.w.r.i.)   F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.O 3 -.w   y.i.r.r.r.r.r.r.i.r.+.1.r.1.@.%.-.-.4.t.r.4.@.w.r.+.:.r.r.r.r.w.+.+.O.  Z i.y O F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.j.b f.v.)  .t.e.w.r.r.w.r.r.+.1.r.4.2.2.1.:.e.r.r.e.2.4.4.+.;.4.4.w.w.w.:.Q S F.F.] c.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.  F.F.o t t.1.+.r.w.+.w.r.@.1.r.r.r.r.r.r.i.r.r.r.r.:.@.+.+.+.@.+.+.1.t.t o F.F.  F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.l.S v N h q e.w.+.4.r.+.+.:.1.1.1.:.:.e.r.1.w.r.1.@.@.;.e.;.+.6 h z A S F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.v.  [ H       y.9.+.e.i.+.+.-.+.+.+.+.-.e.i.+.1.i.1.@.-.1.u.:./       S [   F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.o F.F.F.F.. l r.Z         W i.+.b             H +.  6 -.6 X F.F.F.F.o F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.x.W z.v.v.v.v...W b ( v.F.F.F.F.F.( S F.h.b j.F.F.F.F.F.v.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.  F.F.F.F.F.v.    F.F.F.F.F.F.F.F.  F.F.  F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.D.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.S.D.D.D.F.F.S.F.D.S.D.D.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.D.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.D.F.F.F.F.F.F.F.F.F.F.F.
+F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.
