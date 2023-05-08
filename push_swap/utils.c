@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 12:38:06 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/04 14:06:16 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/05/05 12:52:50 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_data	*ft_dlstnew(void *content)
 	return (new);
 }
 
-void	ft_lstadd_back(t_data **lst, t_data *new)
+void	ft_dlstadd_back(t_data **lst, t_data *new)
 {
 	t_data	*last;
 
