@@ -18,7 +18,9 @@ SRCS	=	utils.c\
 			rr.c\
 			ss.c\
 			pp.c\
-			rrr.c
+			rrr.c\
+			small_sort.c\
+			list.c
 
 OBJS	=	$(SRCS:.c=.o)
 

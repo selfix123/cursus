@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:49:25 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/12 13:47:18 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/05/12 16:34:29 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,11 @@ int	main(int ac, char **av)
 	piles->a = ft_dlstnew(ft_atoi(av[1]));
 	while (++i < ac)
 		ft_dlstadd_back(&piles->a, ft_dlstnew(ft_atoi(av[i])));
-	ra(&piles->a, 1);
-	printf("piles a\n");
+	pb(piles, true);
+	pa(piles, true);
+	// sort_four(piles);
+	printf("\npiles a\n");
 	printdata(piles->a);
-	printf("piles b\n");
+	printf("\npiles b\n");
 	printdata(piles->b);
 }

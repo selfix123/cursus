@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 12:37:35 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/12 12:33:18 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/05/12 16:33:49 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,40 +18,37 @@ void	sort_three_a(t_piles *piles)
 	int	middle;
 	int	last;
 
-	first = piles->a->index;
-	middle = piles->a->next->index;
-	last = piles->a->previous->index;
-	if (first < middle && middle > last && first < last)
+	first = piles->a->content;
+	middle = piles->a->next->content;
+	last = piles->a->previous->content;
+	if (first > middle && first > last)
 	{
 		ra(&piles->a, 1);
 		sort_three_a(piles);
 	}
-	if (first > middle && middle < last && first > last)
+	else if (first < middle && middle > last)
 	{
 		rra(&piles->a, 1);
 		sort_three_a(piles);
 	}
-	if (first > middle && middle < last && first < last)
+	else if (first > middle && first < last)
 	{
-		sa(&piles->a);
+		sa(&piles->a, true);
 		sort_three_a(piles);
 	}
 }
 
 void	sort_four(t_piles *piles)
 {
-	t_data	*head;
-
-	head = piles->a;
-	if (head->previous->index == 1)
-		rra(piles->a, true);
+	if (piles->a->previous->content == find_smallest_nbr(piles))
+		rra(&piles->a, true);
 	else
-		ra(piles->a, true);
-	if (head->index == 1)
+		ra(&piles->a, true);
+	if (piles->a->content == find_smallest_nbr(piles))
 	{
-		pb(piles->b);
-		sort_three_a(piles->a);
-		pa(piles->a);
+		pb(piles, true);
+		sort_three_a(piles);
+		pa(piles, true);
 		return ;
 	}
 	sort_four(piles);
@@ -63,14 +60,14 @@ void	sort_five(t_piles *piles)
 
 	head = piles->a;
 	if (head->previous->index == 1 || head->previous->previous->index == 1)
-		rra(piles->a, true);
+		rra(&piles->a, true);
 	else
-		ra(piles->a, true);
+		ra(&piles->a, true);
 	if (head->index == 1)
 	{
-		pb(piles->b);
-		sort_four(piles->a);
-		pa(piles->a);
+		pb(piles, true);
+		sort_four(piles);
+		pa(piles, true);
 		return ;
 	}
 	sort_five(piles);
