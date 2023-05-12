@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:12:32 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/08 15:38:37 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/05/12 13:45:01 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	rra(t_data **data, bool print)
 {
+	(void) print;
 	(*data) = (*data)->previous;
 	if (true)
 		ft_putendl_fd("rrb", 1);
@@ -21,15 +22,17 @@ void	rra(t_data **data, bool print)
 
 void	rrb(t_data **data, bool print)
 {
+	(void) print;
 	(*data) = (*data)->previous;
 	if (true)
 		ft_putendl_fd("rrb", 1);
 }
 
-void	rrr(t_piles piles, bool print)
+void	rrr(t_piles *piles, bool print)
 {
-	rra(&piles.a, false);
-	rrb(&piles.b, false);
+	(void) print;
+	rra(&piles->a, false);
+	rrb(&piles->b, false);
 	if (true)
 		ft_putendl_fd("rrr", 1);
 }

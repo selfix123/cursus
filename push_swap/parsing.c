@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rr.c                                               :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/23 15:12:34 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/12 13:06:51 by zbeaumon         ###   ########.fr       */
+/*   Created: 2023/05/11 14:31:37 by zbeaumon          #+#    #+#             */
+/*   Updated: 2023/05/11 15:34:43 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ra(t_data **data, bool print)
+int	check_for_double(char *str)
 {
-	(void)print;
-	(*data) = (*data)->next;
-	if (true)
-		ft_putendl_fd("ra", 1);
-}
+	int	i;
+	int	j;
 
-void	rb(t_data **data, bool print)
-{
-	(void)print;
-	(*data) = (*data)->next;
-	if (true)
-		ft_putendl_fd("rb", 1);
-}
-
-void	rr(t_piles *pile, bool print)
-{
-	(void)print;
-	ra(&pile->a, true);
-	rb(&pile->b, true);
-	if (true)
-		ft_putendl_fd("rr", 1);
+	i = 0;
+	j = i + 1;
+	if (!str)
+		return (0);
+	while (str[i] != '\0')
+	{
+		while (str[j])
+		{
+			if (str[i] == str[j])
+				return (1);
+			else
+				return (0);
+			j++;
+		}
+		i++;
+	}
 }

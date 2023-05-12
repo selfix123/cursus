@@ -6,19 +6,20 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 12:38:06 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/05 12:52:50 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/05/12 13:17:21 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_data	*ft_dlstnew(void *content)
+t_data	*ft_dlstnew(int content)
 {
 	t_data	*new;
 
 	new = ft_calloc(sizeof(t_data), 1);
 	if (!new)
 		return (NULL);
+	new->index = 0;
 	new->content = content;
 	new->next = new;
 	new->previous = new;
@@ -44,3 +45,18 @@ void	ft_dlstadd_back(t_data **lst, t_data *new)
 		(*lst)->previous = new;
 	}
 }
+
+/* int	ft_lstlen(t_data *data)
+{
+	int	i;
+
+	i = 0;
+	if (!data)
+		return (0);
+	while (data->next != data->head)
+	{
+		data = data->next;
+		i++;
+	}
+	return (i);
+} */

@@ -45,7 +45,8 @@ SRCS	=	ft_atoi.c\
 			ft_fstrjoin.c\
 			ft_xfree.c\
 			ft_recursive_power.c\
-			ft_calloc_exit.c
+			ft_calloc_exit.c\
+			ft_liatoi.c\
 
 BSRCS	=		ft_lstnew.c\
 	ft_lstadd_front.c\
