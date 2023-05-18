@@ -20,13 +20,10 @@ SRCS	=	utils.c\
 			pp.c\
 			rrr.c\
 			small_sort.c\
-			list.c
+			list.c\
+			radix_sort.c
 
 OBJS	=	$(SRCS:.c=.o)
-
-#------------------------------------------------------------------------------#
-#                                 TARGETS                                      #
-#------------------------------------------------------------------------------#
 
 all: $(NAME)
 
@@ -52,14 +49,10 @@ fclean: clean
 	@$(RM) $(LDIR)$(LIBFT)
 	@echo "$(RED)Removes executables$(WHITE)"
 
-visuinstall:
+visudown:
 	git clone https://github.com/o-reo/push_swap_visualizer.git && cd push_swap_visualizer && mkdir build && cd build && cmake .. && make
-
-revisu:
-	@ $(MAKE) -C push_swap_visualizer/build/
 
 visu:
 	./push_swap_visualizer/build/bin/visualizer
 
-# Removes objects and executables and remakes
 re: fclean all

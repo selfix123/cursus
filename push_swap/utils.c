@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 12:38:06 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/12 13:17:21 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/05/18 13:43:04 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,17 +46,46 @@ void	ft_dlstadd_back(t_data **lst, t_data *new)
 	}
 }
 
-/* int	ft_lstlen(t_data *data)
+size_t	word_count(char const *s, char c)
 {
-	int	i;
+	size_t	i;
+	size_t	nb_cols;
 
-	i = 0;
-	if (!data)
+	nb_cols = 0;
+	if (!s[0])
 		return (0);
-	while (data->next != data->head)
+	i = 0;
+	while (s[i] && s[i] == c)
+		i++;
+	while (s[i])
 	{
-		data = data->next;
+		if (s[i] == c)
+		{
+			nb_cols++;
+			while (s[i] && s[i] == c)
+				i++;
+			continue ;
+		}
 		i++;
 	}
-	return (i);
-} */
+	if (s[i - 1] != c)
+		nb_cols++;
+	return (nb_cols);
+}
+
+// void	get_total_args(char *ac, char **av, t_piles *piles)
+// {
+// 	char	**new_ac;
+
+// 	if (*ac == 2)
+// 	{
+// 		*ac = word_count(av[1], ' ');
+// 		new_ac = ft_split(av[1], ' ');
+// 	}
+// 	else
+// 	{
+// 		*ac = ac - 1;
+// 		new_ac = av + 1;
+// 	}
+// 	return (new_ac);
+// }

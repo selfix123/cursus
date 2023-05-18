@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:12:28 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/12 15:13:14 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/05/13 12:45:09 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	sa(t_data **a, bool print)
 		ft_swap_node(a);
 	}
 	else
- 		ra(a, print);
+		ra(a, print);
 }
 
 void	sb(t_data **b, bool print)

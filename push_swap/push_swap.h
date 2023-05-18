@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:52:04 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/12 16:39:40 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/05/18 13:11:47 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_piles
 {
 	int		a_count;
 	int		b_count;
+	int		total;
 	t_data	*a;
 	t_data	*b;
 }	t_piles;
@@ -49,8 +50,10 @@ void	pb(t_piles *piles, bool print);
 void	sort_three_a(t_piles *piles);
 void	sort_four(t_piles *piles);
 void	sort_five(t_piles *piles);
-int	find_smallest_nbr(t_piles *piles);
+int		find_smallest_nbr(t_piles *piles);
 void	printdata(t_data *data);
-int	lstlen(t_data *data);
+int		lstlen(t_data *data);
+int		is_list_in_order(t_data *data);
+void	radix_sort(t_piles *piles);
 
 #endif

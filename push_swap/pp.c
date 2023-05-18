@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:12:43 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/12 16:41:22 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/05/13 11:09:17 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,6 @@ static void	last_push(t_data **a, t_data **b)
 	(*b) = head_b;
 }
 
-/*send the first element of b on top of a*/
 void	pa(t_piles *piles, bool print)
 {
 	if (!piles->b)
@@ -141,7 +140,6 @@ void	pa(t_piles *piles, bool print)
 		ft_putendl_fd("pa", 1);
 }
 
-/*send the first element of a on top of b*/
 void	pb(t_piles *piles, bool print)
 {
 	if (!piles->a)
