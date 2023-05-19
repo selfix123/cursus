@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:52:04 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/18 13:11:47 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/05/19 15:31:23 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,11 @@ void	sort_three_a(t_piles *piles);
 void	sort_four(t_piles *piles);
 void	sort_five(t_piles *piles);
 int		find_smallest_nbr(t_piles *piles);
+int		find_biggest_nbr(t_piles *piles);
 void	printdata(t_data *data);
 int		lstlen(t_data *data);
 int		is_list_in_order(t_data *data);
 void	radix_sort(t_piles *piles);
+void	index_lst(t_piles *piles);
 
 #endif

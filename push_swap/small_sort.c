@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 12:37:35 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/18 13:24:10 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/05/19 17:12:38 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,19 +81,19 @@ void	all_small_sort(t_piles *piles)
 	if (piles->a_count > 3)
 	{
 		while (piles->a_count > 3)
-			{
-				if (piles->b_count == 1)
-					pa(piles, 1);
-				else
-					ra(&piles->a, 1);
-			}
+		{
+			if (piles->a->content <= piles->total - 3)
+				pa(piles, 1);
+			else
+				ra(&piles->a, 1);
+		}
 	}
 	if (piles->a_count == 2)
 		sort_two_a(piles);
+	else if (piles->a_count == 3)
+		sort_three_a(piles);
 	if (piles->b_count == 2)
 		sort_two_b(piles);
-	if (piles->a_count == 3)
-		sort_three_a(piles);
-	if (piles->b_count == 3)
+	else if (piles->b_count == 3)
 		sort_three_b(piles);
 }

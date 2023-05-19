@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:50:06 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/18 10:25:56 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/05/19 15:33:54 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,9 @@ int	is_list_in_order(t_data *data)
 
 void	index_lst(t_piles *piles)
 {
-	int		index;
-	t_data	*ptr;
-	t_data	*current_node;
+	long		index;
+	t_data		*ptr;
+	t_data		*current_node;
 
 	current_node = piles->a;
 	if (!piles)
