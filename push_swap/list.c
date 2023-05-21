@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:50:06 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/19 15:33:54 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/05/21 13:11:48 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,25 +64,18 @@ int	lstlen(t_data *data)
 int	is_list_in_order(t_data *data)
 {
 	t_data	*head;
-	int		i;
 
 	head = data;
-	i = 0;
 	if (!data)
 		return (0);
-	while (data != head)
+	while (data->next != head)
 	{
-		if (data < data->next)
-		{
+		if (data->content < data->next->content)
 			data = data->next;
-			i++;
-		}
 		else
-			return (i);
-		data = data->next;
-		i++;
+			return (1);
 	}
-	return (i);
+	return (0);
 }
 
 void	index_lst(t_piles *piles)
