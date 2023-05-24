@@ -6,11 +6,22 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:49:25 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/21 12:23:32 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/05/24 15:35:07 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	select_algo(t_piles *piles)
+{
+	if (piles->total == 2)
+		sort_two_a(piles);
+	if (piles->total > 2 && piles->total < 7)
+		all_small_sort(piles);
+	else
+		radix_sort(piles);
+}
+
 
 void	printdata(t_data *data)
 {
@@ -34,18 +45,16 @@ void	printdata(t_data *data)
 int	main(int ac, char **av)
 {
 	t_piles	piles;
+	int		*temp;
 	int		i;
 
-	i = 1;
+	i = -1;
+	temp = temp_array(ac, av);
 	ft_bzero(&piles, sizeof(t_piles));
 	piles.total = ac - 1;
 	piles.a_count = ac - 1;
-	piles.a = ft_dlstnew(ft_atoi(av[1]));
-	while (++i < ac)
-		ft_dlstadd_back(&piles.a, ft_dlstnew(ft_atoi(av[i])));
-	radix_sort(&piles);
-	// printf("\npiles a\n");
-	// printdata(piles.a);
-	// printf("\npiles b\n");
-	// printdata(piles.b);
+	while (++i < ac - 1)
+		ft_dlstadd_back(&piles.a, temp, i, ac);
+	if (is_list_in_order(piles.a))
+		select_algo(&piles);
 }

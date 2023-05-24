@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 12:37:35 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/19 17:12:38 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/05/24 13:38:11 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,86 +14,87 @@
 
 void	sort_two_a(t_piles *piles)
 {
-	if (is_list_in_order(piles->a))
+	if (piles->a->content > piles->a->next->content)
 		sa(&piles->a, 1);
 }
 
 void	sort_two_b(t_piles *piles)
 {
-	if (is_list_in_order(piles->b))
+	if (piles->b->content < piles->b->next->content)
 		sb(&piles->b, 1);
 }
 
-void	sort_three_a(t_piles *piles)
+void	sort_three_a(t_data *a)
 {
-	int	first;
-	int	middle;
-	int	last;
+	t_data	*first;
+	t_data	*middle;
+	t_data	*last;
 
-	first = piles->a->content;
-	middle = piles->a->next->content;
-	last = piles->a->previous->content;
-	if (first > middle && first > last)
+	first = a;
+	middle = a->next;
+	last = a->previous;
+	if (first->content > last->content && first->content > middle->content)
 	{
-		ra(&piles->a, 1);
-		sort_three_a(piles);
+		printf("allo\n");
+		ra(&a, 1);
+		sort_three_a(a);
 	}
-	else if (first < middle && middle > last)
+	else if (first->content < middle->content && middle->content > last->content)
 	{
-		rra(&piles->a, 1);
-		sort_three_a(piles);
+		rra(&a, 1);
+		sort_three_a(a);
 	}
-	else if (first > middle && first < last)
-	{
-		sa(&piles->a, true);
-		sort_three_a(piles);
-	}
+	else if (first->content > middle->content && first->content < last->content)
+		sa(&a, true);
 }
 
 void	sort_three_b(t_piles *piles)
 {
-	int	first;
-	int	middle;
-	int	last;
+	t_data	*first;
+	t_data	*middle;
+	t_data	*last;
 
-	first = piles->a->content;
-	middle = piles->a->next->content;
-	last = piles->a->previous->content;
-	if (first < middle && first < last)
+	first = piles->b;
+	middle = piles->b->next;
+	last = piles->b->previous;
+	if (first->content < middle->content && first->content < last->content)
 	{
-		rb(&piles->a, 1);
-		sort_three_a(piles);
+		rb(&piles->b, 1);
+		sort_three_b(piles);
 	}
-	else if (first > middle && middle < last)
+	else if (middle->content < first->content && middle->content < last->content)
 	{
-		rrb(&piles->a, 1);
-		sort_three_a(piles);
+		rrb(&piles->b, 1);
+		sort_three_b(piles);
 	}
-	else if (first < middle && first > last)
-	{
-		sb(&piles->a, true);
-		sort_three_a(piles);
-	}
+	else if (middle->content > first->content && middle->content > last->content)
+		sb(&piles->b, true);
 }
 
 void	all_small_sort(t_piles *piles)
 {
-	if (piles->a_count > 3)
-	{
-		while (piles->a_count > 3)
+		if (piles->total > 3)
 		{
-			if (piles->a->content <= piles->total - 3)
-				pa(piles, 1);
-			else
-				ra(&piles->a, 1);
+			while (piles->a_count > 3)
+			{
+				printf("%d\n", piles->a_count);
+				if (piles->a->content <= piles->total - 3)
+					pb(piles, 1);
+				else
+				{
+					printf("allo2\n");
+					ra(&piles->a, 1);
+				}
+			}
 		}
-	}
-	if (piles->a_count == 2)
-		sort_two_a(piles);
-	else if (piles->a_count == 3)
-		sort_three_a(piles);
-	if (piles->b_count == 2)
-		sort_two_b(piles);
-	else if (piles->b_count == 3)
-		sort_three_b(piles);
+		if (piles->b_count == 2)
+			sort_two_b(piles);
+		else if (piles->b_count == 3)
+			sort_three_b(piles);
+		if (piles->a_count == 2)
+			sort_two_a(piles);
+		else if (piles->a_count == 3)
+			sort_three_a(piles->a);
+		while (piles->b_count > 0)
+			pa(piles, 1);
 }

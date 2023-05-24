@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:12:28 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/13 12:45:09 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/05/24 13:44:43 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,25 +31,21 @@ void	ft_swap_node(t_data **data)
 void	sa(t_data **a, bool print)
 {
 	if ((*a)->next != (*a) && (*a)->next->next != (*a))
-	{
-		if (print)
-			ft_putendl_fd("sa", 1);
 		ft_swap_node(a);
-	}
 	else
-		ra(a, print);
+		ra(a, 0);
+	if (print)
+		ft_putendl_fd("sa", 1);
 }
 
 void	sb(t_data **b, bool print)
 {
 	if ((*b)->next != (*b) && (*b)->next->next != (*b))
-	{
-		if (print)
-			ft_putendl_fd("sb", 1);
 		ft_swap_node(b);
-	}
 	else
-		ra(b, print);
+		ra(b, 0);
+	if (print)
+		ft_putendl_fd("sb", 1);
 }
 
 void	ss(t_piles piles, bool print)

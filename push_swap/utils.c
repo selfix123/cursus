@@ -6,11 +6,28 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 12:38:06 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/18 13:43:04 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/05/24 13:22:59 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static int	index(int *temp, int index, int len)
+{
+	int	count;
+	int	i;
+
+	count = 0;
+	i = 0;
+	while (i < len - 1)
+	{
+		if (temp[i] < temp[index])
+			count++;
+		i++;
+	}
+	return (count + 1);
+}
+
 
 t_data	*ft_dlstnew(int content)
 {
@@ -26,23 +43,23 @@ t_data	*ft_dlstnew(int content)
 	return (new);
 }
 
-void	ft_dlstadd_back(t_data **lst, t_data *new)
+void	ft_dlstadd_back(t_data **lst, int *temp, int i, int ac)
 {
-	t_data	*last;
-
-	if (!lst)
-		return ;
+	t_data	*ptr;
+	t_data	*head;
+	
 	if (!*lst)
-	{
-		*lst = new;
-	}
+		*lst = ft_dlstnew(index(temp, i, ac));
 	else
 	{
-		last = (*lst)->previous;
-		last->next = new;
-		new->previous = last;
-		new->next = (*lst);
-		(*lst)->previous = new;
+		head = (*lst);
+		ptr = ft_calloc(1, sizeof(t_data));
+		ptr->content = index(temp, i, ac);
+		ptr->previous = head->previous;
+		ptr->next = head;
+		ptr->next->previous = ptr;
+		ptr->previous->next = ptr;
+		(*lst) = head;
 	}
 }
 
@@ -73,19 +90,22 @@ size_t	word_count(char const *s, char c)
 	return (nb_cols);
 }
 
-// void	get_total_args(char *ac, char **av, t_piles *piles)
+
+
+
+// char	**get_total_args(int *ac, char **av)
 // {
-// 	char	**new_ac;
+// 	char	**new_av;
 
 // 	if (*ac == 2)
 // 	{
 // 		*ac = word_count(av[1], ' ');
-// 		new_ac = ft_split(av[1], ' ');
+// 		new_av = ft_split(av[1], ' ');
 // 	}
 // 	else
 // 	{
-// 		*ac = ac - 1;
-// 		new_ac = av + 1;
+// 		*ac = *(ac - 1);
+// 		new_av = av + 1;
 // 	}
-// 	return (new_ac);
+// 	return (new_av);
 // }

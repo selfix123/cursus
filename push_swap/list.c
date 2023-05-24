@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:50:06 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/21 13:11:48 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/05/24 13:09:55 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,28 +78,14 @@ int	is_list_in_order(t_data *data)
 	return (0);
 }
 
-void	index_lst(t_piles *piles)
+int	*temp_array(int ac, char **av)
 {
-	long		index;
-	t_data		*ptr;
-	t_data		*current_node;
+	int	i;
+	int	*temp;
 
-	current_node = piles->a;
-	if (!piles)
-		return ;
-	while (current_node->next != piles->a)
-	{
-		index = 0;
-		ptr = piles->a;
-		while (ptr != piles->a)
-		{
-			if (piles->a->content < piles->a->next->content)
-				piles->a->index = index;
-			piles->a = piles->a->next;
-			index++;
-			ptr = ptr->next;
-		}
-		current_node->content = index + 1;
-		current_node = current_node->next;
-	}
+	i = -1;
+	temp = ft_calloc(ac, sizeof(int));
+	while (++i < ac - 1)
+		temp[i] = ft_atoi(av[i + 1]);
+	return (temp);
 }
