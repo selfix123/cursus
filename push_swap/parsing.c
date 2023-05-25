@@ -6,31 +6,33 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 14:31:37 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/11 15:34:43 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/05/25 15:29:08 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_for_double(char *str)
+int	check_for_double(t_data *data, int ac)
 {
-	int	i;
-	int	j;
+	t_data	*current;
+	t_data	*next;
+	t_data	*head;
 
-	i = 0;
-	j = i + 1;
-	if (!str)
+	head = data;
+	current = data;
+	next = data;
+	if (!data)
 		return (0);
-	while (str[i] != '\0')
+	while (--ac)
 	{
-		while (str[j])
+		while (current->next != head)
 		{
-			if (str[i] == str[j])
+			if (current->content == next->content)
 				return (1);
 			else
 				return (0);
-			j++;
+			current = current->next;
 		}
-		i++;
 	}
+	return (0);
 }

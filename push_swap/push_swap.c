@@ -6,7 +6,7 @@
 /*   By: zbeaumon <zbeaumon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:49:25 by zbeaumon          #+#    #+#             */
-/*   Updated: 2023/05/24 15:35:07 by zbeaumon         ###   ########.fr       */
+/*   Updated: 2023/05/25 15:41:54 by zbeaumon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ static void	select_algo(t_piles *piles)
 	else
 		radix_sort(piles);
 }
-
 
 void	printdata(t_data *data)
 {
@@ -57,4 +56,11 @@ int	main(int ac, char **av)
 		ft_dlstadd_back(&piles.a, temp, i, ac);
 	if (is_list_in_order(piles.a))
 		select_algo(&piles);
+	printf("\n");
+	printf("a\n");
+	printdata(piles.a);
+	printf("\n");
+	printf("b\n");
+	printdata(piles.b);
+	printf("\n");
 }

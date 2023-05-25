@@ -21,13 +21,13 @@ SRCS	=	utils.c\
 			rrr.c\
 			small_sort.c\
 			list.c\
-			radix_sort.c
+			radix_sort.c\
+			parsing.c
 
 OBJS	=	$(SRCS:.c=.o)
 
 all: $(NAME)
 
-# Generates output file
 $(NAME): $(OBJS)
 	@echo "$(GREEN)Compiling . . .$(WHITE)\n"
 	@ $(MAKE) -C $(LDIR)
@@ -37,13 +37,11 @@ $(OBJS): $(SRCS)
 	@$(CC) $(CFLAGS) -c $(SRCS)
 	@echo "$(BLUE)Create objects$(WHITE)"
 
-# Removes objects
 clean:
 	@$(RM) $(OBJS)
 	@$(RM) $(LDIR)*.o
 	@echo "$(RED)Removes objects$(WHITE)"
 
-# Removes objects and executables
 fclean: clean
 	@$(RM) $(NAME)
 	@$(RM) $(LDIR)$(LIBFT)
